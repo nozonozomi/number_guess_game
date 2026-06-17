@@ -1,8 +1,10 @@
 import random
+import time
 
 answer = random.randint(100, 999)
 max_attempts = 10
 attempts = 0
+start_time = time.time()
 
 print("数字当てゲーム！！")
 print("100から999の数字を当ててください！")
@@ -13,8 +15,10 @@ while attempts < max_attempts:
     attempts += 1
 
     if guess == answer:
+        elapsed_time = time.time()-start_time
         print("正解です！")
         print(f"{attempts}回目で正解しました")
+        print(f"かかった時間：{elapsed_time:.1f}秒")
         break
 
     print("不正解です")
